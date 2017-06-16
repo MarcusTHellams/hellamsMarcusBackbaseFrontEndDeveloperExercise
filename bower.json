@@ -1,0 +1,15 @@
+{
+    "name": "Backbase Frontend Developer Exercise",
+    "description": "",
+    "main": "",
+    "authors": [
+        "Marcus T. Hellams"
+    ],
+    "license": "ISC",
+    "homepage": "",
+    "dependencies": {
+        "angular-ui-router": "ui-router#1.0.0-rc.1",
+        "angular": "^1.6.4",
+        "bootstrap": "^3.3.7"
+    }
+}
