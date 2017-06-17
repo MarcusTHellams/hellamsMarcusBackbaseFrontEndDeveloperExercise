@@ -1,1 +1,1 @@
-#H1 My submission for the Backbase Frontend Developer Exercise
+# My submission for the Backbase Frontend Developer Exercise
