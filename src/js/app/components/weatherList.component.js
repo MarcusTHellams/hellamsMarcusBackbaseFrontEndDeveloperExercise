@@ -1,5 +1,5 @@
 (function () {
-    angular.module('myApp.components.weatherList', ['myApp.services.weatherService', 'myApp.filters.averageTemperature', 'myApp.filters.dateFormat'])
+    angular.module('myApp.components.weatherList', ['myApp.services.weatherService', 'myApp.filters.averageTemperature', 'myApp.filters.dateFormat', 'highcharts-ng'])
         .component('weatherList', {
             controller: WeatherList,
             templateUrl: 'templates/weatherList.template.html'
@@ -15,6 +15,24 @@
         ctrl.activeCity = null;
         ctrl.setActiveCity = setActiveCity;
         ctrl.activeCityId = null;
+        ctrl.chartOptions = {
+            chart: {
+                type: 'line',
+            },
+            xAxis: {
+                type: 'datetime',
+                title: null
+            },
+            title: {
+                text: null
+            },
+            series: [],
+            yAxis: {
+                title: {
+                    text: 'Temperature'
+                }
+            }
+        };
 
         ctrl.$onInit = function () {
             //call the weatherService.getCitiesWeather method when the component is initiated to populate the app with the 5 cities weather.
@@ -31,7 +49,20 @@
                 .getCityFiveDayForecast(String(id))
                 .then(function (response) {
                     ctrl.activeCity = response;
+                    chartNewData();
                 });
+        }
+
+        function chartNewData() {
+            var data = [{ data: [], showInLegend: false }];
+            var current;
+            for (var i = 0; i < 5; i++) {
+                current = ctrl.activeCity.list[i];
+                console.log(moment.unix(current.dt).utc().format());
+                data[0].data.push([moment.unix(current.dt).valueOf(), current.temp.max]);
+            }
+            ctrl.chartOptions.title.text = ctrl.activeCity.city.name;
+            ctrl.chartOptions.series = data;
         }
     }
 })();

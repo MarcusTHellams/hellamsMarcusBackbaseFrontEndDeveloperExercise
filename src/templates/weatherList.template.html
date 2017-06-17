@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="list-group">
             <a ng-repeat="city in $ctrl.cities" class="list-group-item" href="javascript:void(0);" ng-click="$ctrl.setActiveCity(city.id)"
                 ng-class="{'active': city.id === $ctrl.activeCityId}">
@@ -14,7 +14,7 @@
             </a>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="panel panel-success" ng-if="$ctrl.activeCity">
             <div class="panel-heading">
                 <h4 class="panel-title">{{$ctrl.activeCity.city.name}}</h4>
@@ -39,5 +39,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-sm-4" ng-if="$ctrl.activeCity">
+        <highchart config="$ctrl.chartOptions"></highchart>
     </div>
 </div>

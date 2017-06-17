@@ -10,6 +10,8 @@
   "dependencies": {
     "angular": "^1.6.4",
     "bootstrap": "^3.3.7",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "highcharts-ng": "highchart-ng#^1.1.0",
+    "highcharts": "^5.0.12"
   }
 }
