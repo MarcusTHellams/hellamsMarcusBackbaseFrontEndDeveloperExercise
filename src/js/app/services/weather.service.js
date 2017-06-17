@@ -9,6 +9,7 @@
             getCityFiveDayForecast: getCityFiveDayForecast
         };
 
+        // functions to make the api calls to openweather map api        
         function getCitiesWeather() {
             return $http.get(
                 'http://api.openweathermap.org/data/2.5/group?id=' +

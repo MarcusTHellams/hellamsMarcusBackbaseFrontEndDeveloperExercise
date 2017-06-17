@@ -3,6 +3,8 @@ var gulp = require('gulp');
 var inject = require('gulp-inject');
 var filesort = require('gulp-angular-filesort');
 
+//The following is for just injecting my different angular app files in the correct order automatically so I don't run into any angular depdency errors which can be an issue in a app with alot of files. Probably didn't need it in an app this size but I used it anyway for peace of mind.
+
 gulp.task('inject', function () {
     return gulp.src('src/index.html')
         .pipe(inject(
@@ -10,6 +12,8 @@ gulp.task('inject', function () {
         ))
         .pipe(gulp.dest('src/'));
 });
+
+//The following was for my benefit while building this app so I could have automatic reloading whenever I made changes.
 
 gulp.task('server', ['watch'], function () {
     gulp.src('src')
