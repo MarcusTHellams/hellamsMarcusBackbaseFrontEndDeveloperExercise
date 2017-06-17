@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-*   Clone the repo or download it as a zip file.
+*   Clone the repo or download it as a zip file from [here](https://github.com/MarcusTHellams/hellamsMarcusBackbaseFrontEndDeveloperExercise)
 *   Navigate to the cloned/downloaded folder using the cli of your choosing
     *   `npm install`
     *   `npm run build`
