@@ -4,19 +4,22 @@
 <head>
     <title>Backbase Frontend Developer Test 2.2</title>
     <meta charset="UTF-8">
-    <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
 
 </head>
 
-<body>
+<body style="padding-top:50px;">
     <div class="container">
         <weather-list></weather-list>
     </div>
 
-    <script type="text/javascript" src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/moment/min/moment.min.js"></script>
     <!-- inject:js -->
+    <script src="js/app/services/weather.service.js"></script>
+    <script src="js/app/filters/dateFormat.filter.js"></script>
+    <script src="js/app/filters/averageTemperature.filter.js"></script>
     <script src="js/app/components/weatherList.component.js"></script>
     <script src="js/app/app.js"></script>
     <!-- endinject -->

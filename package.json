@@ -1,10 +1,11 @@
 {
   "name": "backbasefrontenddeveloperexercise",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Marcus Hellams' Submission for the Backbase Frontend Developer Exercise 2.2",
+  "main": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "bower install",
+    "build": "gulp inject"
   },
   "keywords": [],
   "author": "Marcus T. Hellams",
