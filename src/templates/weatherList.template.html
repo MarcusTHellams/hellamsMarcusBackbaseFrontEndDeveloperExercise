@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-4">
+    <div ng-class="{'col-sm-4': $ctrl.activeCity, 'col-sm-12': !$ctrl.activeCity}">
         <div class="list-group">
             <a ng-repeat="city in $ctrl.cities" class="list-group-item" href="javascript:void(0);" ng-click="$ctrl.setActiveCity(city.id)"
                 ng-class="{'active': city.id === $ctrl.activeCityId}">

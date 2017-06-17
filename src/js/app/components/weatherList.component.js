@@ -19,6 +19,11 @@
             chart: {
                 type: 'line',
             },
+            tooltip: {
+                pointFormat: '<div style="text-align:center"><strong>{point.y} </strong></div>',
+                valueSuffix: ' °C'
+
+            },
             xAxis: {
                 type: 'datetime',
                 title: null
@@ -58,7 +63,6 @@
             var current;
             for (var i = 0; i < 5; i++) {
                 current = ctrl.activeCity.list[i];
-                console.log(moment.unix(current.dt).utc().format());
                 data[0].data.push([moment.unix(current.dt).valueOf(), current.temp.max]);
             }
             ctrl.chartOptions.title.text = ctrl.activeCity.city.name;
