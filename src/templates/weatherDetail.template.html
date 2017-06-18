@@ -1,18 +1,11 @@
 <div class="row">
-    <div ng-class="{'col-sm-4': $ctrl.activeCity, 'col-sm-12': !$ctrl.activeCity}">
-        <div class="list-group">
-            <a ng-repeat="city in $ctrl.cities" class="list-group-item" ui-sref="weatherDetail({ cityId: city.id })" ng-class="{'active': city.id === $ctrl.activeCityId}">
-                <h4 class="list-group-item-heading">{{city.name}}</h4>
-                <dl class="list-group-item-text dl-horizontal">
-                    <dt>Wind Speed</dt>
-                    <dd>{{city.wind.speed}}</dd>
-                    <dt>Average Temperature</dt>
-                    <dd>{{city.main | averageTemperature}} &deg;C </dd>
-                </dl>
-            </a>
-        </div>
+    <div class="col-sm-12">
+        <a ui-sref="weatherlist" class="btn btn-primary">BACK</a>
     </div>
-    <div class="col-sm-4">
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-6">
         <div class="panel panel-success" ng-if="$ctrl.activeCity">
             <div class="panel-heading">
                 <h4 class="panel-title">{{$ctrl.activeCity.city.name}}</h4>
@@ -23,10 +16,13 @@
                     <dl class="list-group-item-text dl-horizontal">
                         <dt>Max Temperature</dt>
                         <dd>{{day.temp.max}} &deg;C</dd>
+
                         <dt>Minimum Temperature</dt>
                         <dd>{{day.temp.min}} &deg;C</dd>
+
                         <dt>Humidity</dt>
                         <dd>{{day.humidity}}</dd>
+
                         <dt>Forecast</dt>
                         <dd>{{day.weather[0].description}} <img ng-src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png"
                                 alt="Weather Icon"> </dd>
@@ -35,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4" ng-if="$ctrl.activeCity">
+    <div class="col-sm-6" ng-if="$ctrl.activeCity">
         <highchart config="$ctrl.chartOptions"></highchart>
     </div>
 </div>
