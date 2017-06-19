@@ -8,8 +8,9 @@
         // bootstrap the app manually
         angular.bootstrap(document, ['myApp']);
     });
-    config.$inject = ['$stateProvider', '$urlRouterProvider'];
-    function config($stateProvider, $urlRouterProvider) {
+    config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+    function config($stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
         $urlRouterProvider.otherwise('/');
         var states = [
             {
